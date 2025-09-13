@@ -2,13 +2,11 @@ package eu.chrost.springcache;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cache.CacheManager;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest
-class BookServiceCacheIntegrationTest {
+class BookServiceCacheIntegrationTest extends BaseIntegrationTest {
 
     @Autowired
     private BookService bookService;

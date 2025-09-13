@@ -9,3 +9,7 @@ logging:
         cache: TRACE
         cache.interceptor: TRACE
         cache.annotation: TRACE
+
+app:
+  runner:
+    enabled: true

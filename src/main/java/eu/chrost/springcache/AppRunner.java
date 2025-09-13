@@ -5,19 +5,17 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBooleanProperty;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.stereotype.Component;
 
-@SpringBootApplication
-@EnableCaching
+@Component
+@ConditionalOnBooleanProperty("app.runner.enabled")
 @RequiredArgsConstructor
 @Slf4j
 class AppRunner implements CommandLineRunner {
     private final BookService bookService;
     private final CacheInspector cacheInspector;
-
-	public static void main(String[] args) {
-		SpringApplication.run(AppRunner.class, args);
-	}
 
     @Override
     public void run(String... args) {
