@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: spring-cache-workshop
+
+logging:
+  level:
+    org:
+      springframework:
+        cache: TRACE
+        cache.interceptor: TRACE
+        cache.annotation: TRACE
