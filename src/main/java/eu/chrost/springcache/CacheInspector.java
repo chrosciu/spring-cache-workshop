@@ -6,6 +6,9 @@ import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.stereotype.Component;
 
+import java.util.Map;
+import java.util.concurrent.ConcurrentMap;
+
 @Component
 @RequiredArgsConstructor
 @Slf4j
@@ -18,16 +21,20 @@ public class CacheInspector {
             log.info("Cache not found: {}", cacheName);
             return;
         }
+        Object nativeCache = cache.getNativeCache();
+        log.info("Cache '{}' is of type {}", cacheName, nativeCache.getClass());
+        switch (nativeCache) {
+            case ConcurrentMap<?,?> map -> logMap(map);
+            case com.github.benmanes.caffeine.cache.Cache<?, ?> caffeineCache -> logMap(caffeineCache.asMap());
+            default -> log.info("Cache is not a supported type");
+        }
+    }
 
-        if (cache.getNativeCache() instanceof java.util.concurrent.ConcurrentMap<?,?> nativeCache) {
-            log.info("Cache content for '{}':", cacheName);
-            if (nativeCache.isEmpty()) {
-                log.info("No items");
-            } else {
-                nativeCache.forEach((k, v) -> log.info("{} => {}", k, v));
-            }
+    private void logMap(Map<?, ?> map) {
+        if (map.isEmpty()) {
+            log.info("No items");
         } else {
-            log.info("Cache '{}' is not a ConcurrentMap (type = {})", cacheName, cache.getNativeCache().getClass());
+            map.forEach((k, v) -> log.info("{} => {}", k, v));
         }
     }
 }
