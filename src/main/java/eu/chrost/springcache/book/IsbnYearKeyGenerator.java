@@ -1,4 +1,4 @@
-package eu.chrost.springcache;
+package eu.chrost.springcache.book;
 
 import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.stereotype.Component;

@@ -5,5 +5,5 @@ import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
 @ActiveProfiles("integration")
-abstract class BaseIntegrationTest {
+public abstract class BaseIntegrationTest {
 }

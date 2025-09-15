@@ -1,4 +1,4 @@
-package eu.chrost.springcache;
+package eu.chrost.springcache.book;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-class BookService {
+public class BookService {
     private final BookRepository bookRepository;
 
     /**

@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentMap;
 @Component
 @RequiredArgsConstructor
 @Slf4j
-public class CacheInspector {
+class CacheInspector {
     private final CacheManager cacheManager;
 
     public void logCache(String cacheName) {

@@ -1,4 +1,4 @@
-package eu.chrost.springcache;
+package eu.chrost.springcache.book;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;

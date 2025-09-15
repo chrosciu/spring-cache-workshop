@@ -1,5 +1,6 @@
-package eu.chrost.springcache;
+package eu.chrost.springcache.book;
 
+import eu.chrost.springcache.BaseIntegrationTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;

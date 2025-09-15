@@ -1,12 +1,10 @@
 package eu.chrost.springcache;
 
+import eu.chrost.springcache.book.BookService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBooleanProperty;
-import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.stereotype.Component;
 
 @Component
