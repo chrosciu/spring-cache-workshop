@@ -1,6 +1,6 @@
-package eu.chrost.springcache;
+package eu.chrost.springcache.book;
 
-import eu.chrost.springcache.book.BookService;
+import eu.chrost.springcache.common.CacheInspector;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @ConditionalOnBooleanProperty("app.runner.enabled")
 @RequiredArgsConstructor
 @Slf4j
-class AppRunner implements CommandLineRunner {
+class BookRunner implements CommandLineRunner {
     private final BookService bookService;
     private final CacheInspector cacheInspector;
 

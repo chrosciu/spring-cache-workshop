@@ -1,4 +1,4 @@
-package eu.chrost.springcache;
+package eu.chrost.springcache.common;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentMap;
 @Component
 @RequiredArgsConstructor
 @Slf4j
-class CacheInspector {
+public class CacheInspector {
     private final CacheManager cacheManager;
 
     public void logCache(String cacheName) {
